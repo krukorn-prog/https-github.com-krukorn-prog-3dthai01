@@ -1,0 +1,8 @@
+{
+  "name": "ตามล่าหาคำควบแท้By ครูกรณ์",
+  "description": "เกมยิงคำควบกล้ำแท้และคำควบกล้ำไม่แท้ 3D สำหรับเด็กๆ ใช้เมาส์เล็งยิงปืน 3 มิติ พร้อมเอฟเฟกต์และเสียงอ่าน",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
