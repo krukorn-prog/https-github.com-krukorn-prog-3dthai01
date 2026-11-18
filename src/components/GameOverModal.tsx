@@ -25,7 +25,7 @@ export const GameOverModal: React.FC<Props> = ({
 }) => {
   if (gameStatus !== 'gameover' && gameStatus !== 'victory') return null;
 
-  const totalShots = hitsCorrect + hitsWrong;
+  const totalSelections = hitsCorrect + hitsWrong;
   const accuracy = totalShots > 0 ? Math.round((hitsCorrect / totalShots) * 100) : 0;
   const isNewHighScore = score > highScore && score > 0;
 
@@ -88,14 +88,14 @@ export const GameOverModal: React.FC<Props> = ({
           </div>
 
           <div className="bg-slate-900/60 p-3 rounded-xl border border-slate-800/80">
-            <div className="text-xs text-emerald-400 font-semibold">ยิงคำควบแท้ถูก</div>
+            <div className="text-xs text-emerald-400 font-semibold">เลือกคำควบแท้ถูก</div>
             <div className="text-2xl font-black font-kanit text-emerald-300">
               {hitsCorrect} คำ
             </div>
           </div>
 
           <div className="bg-slate-900/60 p-3 rounded-xl border border-slate-800/80">
-            <div className="text-xs text-rose-400 font-semibold">ยิงพลาด (ควบไม่แท้)</div>
+            <div className="text-xs text-rose-400 font-semibold">เลือกคำไม่ถูกต้อง</div>
             <div className="text-2xl font-black font-kanit text-rose-300">
               {hitsWrong} ครั้ง
             </div>
