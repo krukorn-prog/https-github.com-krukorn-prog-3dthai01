@@ -5,6 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    base: '/https-github.com-krukorn-prog-3dthai01/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
