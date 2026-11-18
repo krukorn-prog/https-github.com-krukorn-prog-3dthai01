@@ -95,11 +95,11 @@ export const HUD: React.FC<Props> = ({
           <div className="bg-slate-900/90 backdrop-blur-md border border-cyan-500/50 rounded-full px-5 py-1.5 shadow-xl flex items-center gap-2">
             <Target className="w-5 h-5 text-cyan-400 animate-pulse" />
             <span className="text-sm font-semibold text-slate-200">
-              ภารกิจ: เล็งยิงเฉพาะ <span className="text-emerald-400 font-bold underline decoration-emerald-500 decoration-2 underline-offset-2">คำควบกล้ำแท้</span>
+              ภารกิจ: เลือกเฉพาะ <span className="text-emerald-400 font-bold underline decoration-emerald-500 decoration-2 underline-offset-2">คำควบกล้ำแท้</span>
             </span>
           </div>
           <span className="text-xs text-slate-400 mt-1">
-            (คำควบกล้ำไม่แท้ อย่าเพิ่งยิงนะเด็กๆ!)
+            (เลือกคำควบกล้ำแท้เพื่อรับคะแนนนะเด็กๆ!)
           </span>
         </div>
 
@@ -192,7 +192,7 @@ export const HUD: React.FC<Props> = ({
         </div>
       </header>
 
-      {/* 2. Educational Feedback Toast (When a word is shot) */}
+      {/* 2. Educational Feedback Toast (When a word is selected) */}
       {lastFeedback && Date.now() - lastFeedback.timestamp < 3500 && (
         <div className="absolute top-20 sm:top-24 left-1/2 -translate-x-1/2 z-30 transition-all duration-300 pointer-events-auto">
           <div
@@ -237,47 +237,6 @@ export const HUD: React.FC<Props> = ({
         </div>
       )}
 
-      {/* 3. Dynamic Laser Crosshair following Mouse */}
-      <div
-        className="fixed pointer-events-none transition-transform duration-75 ease-out z-40 -translate-x-1/2 -translate-y-1/2"
-        style={{ left: `${aimPos.x}px`, top: `${aimPos.y}px` }}
-      >
-        {/* Reticle Circle */}
-        <div
-          className={`relative flex items-center justify-center rounded-full transition-all duration-150 ${
-            hoveredWord
-              ? hoveredWord.type === 'true'
-                ? 'w-16 h-16 border-2 border-emerald-400 bg-emerald-500/10 shadow-[0_0_20px_rgba(52,211,153,0.6)]'
-                : 'w-16 h-16 border-2 border-rose-400 bg-rose-500/10 shadow-[0_0_20px_rgba(244,63,94,0.6)]'
-              : 'w-12 h-12 border border-cyan-400/80 bg-cyan-500/5 shadow-[0_0_15px_rgba(56,189,248,0.4)]'
-          }`}
-        >
-          {/* Crosshair Center dot */}
-          <div
-            className={`w-2 h-2 rounded-full ${
-              hoveredWord
-                ? hoveredWord.type === 'true'
-                  ? 'bg-emerald-400 shadow-[0_0_8px_#34d399]'
-                  : 'bg-rose-400 shadow-[0_0_8px_#f43f5e]'
-                : 'bg-cyan-300 shadow-[0_0_6px_#38bdf8]'
-            }`}
-          />
-
-          {/* Crosshair ticks */}
-          <div className="absolute -top-2 w-0.5 h-2 bg-cyan-400/80" />
-          <div className="absolute -bottom-2 w-0.5 h-2 bg-cyan-400/80" />
-          <div className="absolute -left-2 w-2 h-0.5 bg-cyan-400/80" />
-          <div className="absolute -right-2 w-2 h-0.5 bg-cyan-400/80" />
-
-          {/* Hover Tag Info */}
-          {hoveredWord && (
-            <div className="absolute -bottom-8 whitespace-nowrap bg-slate-900/90 text-[11px] font-semibold px-2 py-0.5 rounded border border-cyan-400/40 text-cyan-200">
-              คลิกเพื่อยิง!
-            </div>
-          )}
-        </div>
-      </div>
-
       {/* 4. Bottom Controls / Instructions Hint & Credits */}
       <footer className="absolute bottom-3 left-0 right-0 px-4 flex items-center justify-between z-10">
         {/* Bottom Left: Creator Credit Badge */}
@@ -290,11 +249,11 @@ export const HUD: React.FC<Props> = ({
 
         {/* Center Hint */}
         <div className="hidden sm:flex bg-slate-950/75 backdrop-blur-sm border border-slate-800/80 px-4 py-1.5 rounded-full text-xs text-slate-400 items-center gap-3">
-          <span>🖱️ ขยับเมาส์เพื่อเล็งปืน 3D</span>
+          <span>🖱️ เลื่อนเมาส์เพื่อดูบัตรคำ</span>
           <span className="text-slate-600">|</span>
-          <span>⚡ คลิกซ้ายเพื่อยิง</span>
+          <span>⚡ คลิกหรือแตะเพื่อเลือก</span>
           <span className="text-slate-600">|</span>
-          <span className="text-emerald-400 font-semibold">ยิงเฉพาะคำควบแท้ได้คะแนน!</span>
+          <span className="text-emerald-400 font-semibold">เลือกคำควบแท้เพื่อรับคะแนน!</span>
         </div>
 
         {/* Bottom Right Balance placeholder */}
