@@ -212,7 +212,7 @@ export default function App() {
               พักเกมชั่วคราว ⏸️
             </h3>
             <p className="text-sm text-slate-300 mb-6">
-              กดปุ่มด้านล่างเพื่อกลับไปยิงคำควบกล้ำต่อ
+              กดปุ่มด้านล่างเพื่อกลับไปเลือกคำควบกล้ำต่อ
             </p>
             <button
               id="resume-game-btn"
