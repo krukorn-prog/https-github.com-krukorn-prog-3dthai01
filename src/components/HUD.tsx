@@ -51,8 +51,6 @@ export const HUD: React.FC<Props> = ({
   soundEnabled,
   voiceEnabled,
   lastFeedback,
-  aimPos,
-  hoveredWord,
   onToggleSound,
   onToggleVoice,
   onOpenDictionary,
