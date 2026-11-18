@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, Sparkles, BookOpen, Shield, Flame, Compass, Crosshair } from 'lucide-react';
+import { Play, Sparkles, BookOpen, Shield, Flame, Compass, MousePointerClick } from 'lucide-react';
 import { GameMode } from '../types';
 
 interface Props {
@@ -32,7 +32,7 @@ export const StartScreen: React.FC<Props> = ({
         </div>
 
         <p className="text-sm sm:text-base text-slate-300 mt-2 max-w-lg">
-          บังคับเครื่องยิง 3D ด้วยเมาส์ แล้วเล็งยิงเฉพาะ{' '}
+          เลือกบัตรคำ 3 มิติด้วยการคลิกหรือแตะ แล้วเลือกเฉพาะ{' '}
           <span className="text-emerald-400 font-bold underline decoration-emerald-500">
             คำควบกล้ำแท้
           </span>{' '}
@@ -122,7 +122,7 @@ export const StartScreen: React.FC<Props> = ({
                 ทดสอบ 60 วินาที
               </div>
               <div className="text-xs text-slate-400 mt-0.5">
-                ยิงคำควบแท้ให้ได้มากที่สุดก่อนหมดเวลา!
+                เลือกคำควบแท้ให้ได้มากที่สุดก่อนหมดเวลา!
               </div>
             </div>
           </button>
@@ -136,7 +136,7 @@ export const StartScreen: React.FC<Props> = ({
             className="flex-1 py-4 px-6 rounded-2xl bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-kanit font-extrabold text-lg shadow-xl shadow-cyan-900/50 flex items-center justify-center gap-2.5 transition-transform active:scale-95 cursor-pointer"
           >
             <Play className="w-6 h-6 fill-slate-950 text-slate-950" />
-            <span>เริ่มยิงปืน 3D ทันที!</span>
+            <span>เริ่มเล่นเกม</span>
           </button>
 
           <button
@@ -151,8 +151,8 @@ export const StartScreen: React.FC<Props> = ({
 
         {/* Quick hint for kids */}
         <div className="mt-4 flex items-center gap-2 text-xs text-slate-400">
-          <Crosshair className="w-4 h-4 text-cyan-400" />
-          <span>เคล็ดลับ: เลื่อนเมาส์ไปหาคำที่ต้องการแล้วคลิกซ้ายเพื่อยิง</span>
+          <MousePointerClick className="w-4 h-4 text-cyan-400" />
+          <span>เคล็ดลับ: คลิกหรือแตะบัตรคำที่ต้องการเพื่อเลือก</span>
         </div>
       </div>
     </div>
